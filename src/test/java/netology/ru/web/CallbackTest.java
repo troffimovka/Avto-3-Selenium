@@ -36,7 +36,7 @@ public class CallbackTest {
 //        options.setHeadless(true);
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        driver.get("http://localhost:9999");
+        driver.get("http://localhost:7777");
     }
 
     @AfterEach
@@ -48,7 +48,7 @@ public class CallbackTest {
     @Test
     void shouldTestHappyPath() {
         //entering first name
-        driver.findElement(cssSelector("[data-test-id=name] input")).sendKeys("Василий Чапаев");
+        driver.findElement(cssSelector("[data-test-id=name] input")).sendKeys("Иван Кузьмин");
         //entering phone
         driver.findElement(cssSelector("[type='tel']")).sendKeys("+74956783423");
         //clicking checkbox
@@ -74,7 +74,7 @@ public class CallbackTest {
     @Test
     void shouldWarnIfPhoneFieldIsEmpty() {
         driver.get("http://localhost:9999");
-        driver.findElement(cssSelector("[data-test-id=name] input")).sendKeys("Василий Чапаев");
+        driver.findElement(cssSelector("[data-test-id=name] input")).sendKeys("Иван Кузьмин");
         driver.findElement(cssSelector("[data-test-id=phone] input")).sendKeys("");
         driver.findElement(cssSelector("[data-test-id=agreement] .checkbox__box")).click();
         driver.findElement(cssSelector("button")).click();
