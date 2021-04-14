@@ -1,1 +1,2 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/xs20nq9hgj21uisr?svg=true)](https://ci.appveyor.com/project/troffimovka/Avto-3-Selenium)
+## Ошибка при подключении CI
+![ci](https://user-images.githubusercontent.com/46753604/114742741-b2f2c380-9d54-11eb-8499-fb649c3c4570.JPG)
