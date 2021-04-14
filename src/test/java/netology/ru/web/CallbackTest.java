@@ -11,10 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.openqa.selenium.By.cssSelector;
 
 public class CallbackTest {
@@ -34,9 +32,9 @@ public class CallbackTest {
         ChromeOptions options = new ChromeOptions();
 //        options.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
 //        options.setHeadless(true);
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        driver.get("http://localhost:7777");
+        driver.get("http://localhost:9999");
     }
 
     @AfterEach
@@ -46,7 +44,7 @@ public class CallbackTest {
     }
 
     @Test
-    void shouldTestHappyPath() {
+    void shouldTestHappyPath() throws InterruptedException {
         //entering first name
         driver.findElement(cssSelector("[data-test-id=name] input")).sendKeys("Иван Кузьмин");
         //entering phone
