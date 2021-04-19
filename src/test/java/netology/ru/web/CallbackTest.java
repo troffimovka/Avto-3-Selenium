@@ -18,21 +18,16 @@ import static org.openqa.selenium.By.cssSelector;
 public class CallbackTest {
     private WebDriver driver;
 
-    //    System.setProperty("webdriver.chrome.driver", "/pathTo/chromedriver);
     @BeforeAll
-    //running the driver
     static void setUpAll() {
         WebDriverManager.chromedriver().setup();
-//        System.setProperty("webdriver.chrome.driver", ".\\driver\\win\\chromedriver.exe");
     }
 
     @BeforeEach
         //creating driver object
     void setUp() {
         ChromeOptions options = new ChromeOptions();
-//        options.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
-//        options.setHeadless(true);
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:9999");
     }
@@ -139,9 +134,6 @@ public class CallbackTest {
         driver.findElement(cssSelector("[data-test-id=phone] input")).sendKeys("+12345678999");
         driver.findElement(cssSelector("button")).click();
         driver.findElement(cssSelector("[data-test-id='agreement'].input_invalid .checkbox__text")).isDisplayed();
-        String colorValue = driver.findElement(cssSelector("[data-test-id='agreement'] .checkbox__text"))
-                .getCssValue("color");
-        assertEquals("rgba(255, 92, 92, 1)", colorValue);
     }
 }
 
